@@ -36,7 +36,7 @@ export default function Register(){
         <div className="home-container">
             <h1>Cadastra-se</h1>
             <span>Vamos criar sua conta!</span>
-            <form onSubmit={handleRegister}>
+            <form className="form" onSubmit={handleRegister}>
                 <input type="email" id="email" placeholder="Digite um email" value={email}
                        onChange={(e) => setEmail(e.target.value)}/>
                 <input type="password" id="password" placeholder="Digite a senha" value={password}

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {auth} from "../../firebase";
-import {signInWithEmailAndPassword, signOut} from "firebase/auth";
+// import {signInWithEmailAndPassword, signOut} from "firebase/auth";
+import {signInWithEmailAndPassword} from "firebase/auth";
 import './home.css';
 import {Link, useNavigate} from "react-router-dom";
 
@@ -21,11 +22,11 @@ export default function Home() {
         })
     }
 
-    async function logoutUser() {
-        await signOut(auth);
-        setEmail("");
-        setPassword("");
-    }
+    // async function logoutUser() {
+    //     await signOut(auth);
+    //     setEmail("");
+    //     setPassword("");
+    // }
 
     async function handleLogin(e){
         e.preventDefault();
@@ -41,8 +42,8 @@ export default function Home() {
         <div className="home-container">
             <h1>Lista de tarefas</h1>
             <span>Gerencie suas tarefas de forma fácil</span>
-            <form onSubmit={handleLogin}>
-                <input type="email" id="email" placeholder="Digite um email" value={email}
+            <form className="form" onSubmit={handleLogin}>
+                <input type="email" id="email" placeholder="Digite seu email" value={email}
                        onChange={(e) => setEmail(e.target.value)}/>
                 <input type="password" id="password" placeholder="Digite a senha" value={password}
                        onChange={(e) => setPassword(e.target.value)}/>
