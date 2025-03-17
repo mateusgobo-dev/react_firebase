@@ -15,7 +15,7 @@ export default function Private({children}) {
                     setSigned(false)
                 } else {
                     const userData = {
-                        uuid: user.uuid,
+                        uuid: user.uid,
                         email: user.email,
                     }
                     localStorage.setItem("userData", JSON.stringify(userData))
